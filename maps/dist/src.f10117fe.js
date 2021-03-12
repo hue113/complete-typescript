@@ -123111,7 +123111,8 @@ function () {
 
 exports.Company = Company;
 },{"faker":"node_modules/faker/index.js"}],"src/CustomMap.ts":[function(require,module,exports) {
-"use strict";
+"use strict"; // import { User } from "./User";
+// import { Company } from "./Company";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -123131,17 +123132,15 @@ function () {
     });
   }
 
-  CustomMap.prototype.addUserMarker = function (user) {
+  CustomMap.prototype.addMarker = function (mappable) {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng
+        lat: mappable.location.lat,
+        lng: mappable.location.lng
       }
     });
   };
-
-  CustomMap.prototype.addCompanyMarker = function (company) {};
 
   return CustomMap;
 }();
@@ -123160,13 +123159,13 @@ var Company_1 = require("./Company");
 
 var CustomMap_1 = require("./CustomMap");
 
-var user = new User_1.User();
-console.log(user);
-var company = new Company_1.Company();
-console.log(company); // console.log("hi there!");
+var user = new User_1.User(); // console.log(user);
+
+var company = new Company_1.Company(); // console.log(company);
 
 var customMap = new CustomMap_1.CustomMap("map");
-customMap.addUserMarker(user);
+customMap.addMarker(user);
+customMap.addMarker(company);
 },{"./User":"src/User.ts","./Company":"src/Company.ts","./CustomMap":"src/CustomMap.ts"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
