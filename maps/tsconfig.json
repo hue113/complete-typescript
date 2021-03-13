@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "types": ["googlemaps"]
+  },
+  "exclude": ["test.ts", "**/*.spec.ts"]
+}
